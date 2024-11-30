@@ -1,10 +1,11 @@
 FROM node:22
 
-WORKDIR /usr/src/
+WORKDIR /usr/src/api
 
-# COPY package*.json ./
-# RUN npm install
+COPY ./api/package*.json ./
 
-# COPY . .
+RUN npm install
 
-# CMD ["npm", "run", "start"]
+COPY ./api/ .
+
+CMD ["npm", "run", "start"]
